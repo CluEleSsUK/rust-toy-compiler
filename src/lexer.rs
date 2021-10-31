@@ -147,7 +147,6 @@ fn stringify(chars: Vec<char>) -> String {
 }
 
 #[cfg(test)]
-#[macro_use]
 mod tests {
     use crate::lexer::{lex, LexingError, Token};
     use crate::lexer_table_test;
