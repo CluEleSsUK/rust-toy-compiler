@@ -80,9 +80,8 @@ mod test {
     #[test]
     fn number_token_parsed_as_value_expr() {
         let result = parse(&mut vec![Token::Number("2".to_string())]);
+        let expected_result = vec![Expression::Value { value: ValueType::Integer(2) }];
 
-        assert_that!(result).is_ok_containing(&vec![Expression::Value {
-            value: ValueType::Integer(2)
-        }]);
+        assert_that!(result).is_ok_containing(&expected_result);
     }
 }
