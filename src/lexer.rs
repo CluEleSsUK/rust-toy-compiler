@@ -3,7 +3,7 @@ use std::str::Chars;
 
 #[derive(Eq, PartialEq)]
 #[derive(Debug)]
-enum Token {
+pub(crate) enum Token {
     Let,
     Function,
     Identifier(String),
@@ -149,7 +149,6 @@ fn stringify(chars: Vec<char>) -> String {
 #[cfg(test)]
 mod tests {
     use crate::lexer::{lex, LexingError, Token};
-    use crate::lexer_table_test;
 
     #[test]
     fn empty_returns_eof() {
